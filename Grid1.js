@@ -12,11 +12,11 @@ export default class Grid1 extends React.Component {
     this.state = {
       defaultStory: null,
       data: [
-        {'id': 1, 'function': this._julia, 'image': require('./Images/Julia.jpg')},
-        {'id': 2, 'function': this._hypatia, 'image': require('./Images/Hypatia.jpg')},
-        {'id': 3, 'function': this._valerie, 'image': require('./Images/Valerie.gif')},
-        {'id': 4, 'function': this._ada, 'image': require('./Images/Ada.jpg')},
-        {'id': 5, 'function': this._sabrina, 'image': require('./Images/Sabrina.png')}
+        {'id': 1, 'function': this._julia, 'image': require('./images/Julia.jpg')},
+        {'id': 2, 'function': this._hypatia, 'image': require('./images/Hypatia.jpg')},
+        {'id': 3, 'function': this._valerie, 'image': require('./images/Valerie.gif')},
+        {'id': 4, 'function': this._ada, 'image': require('./images/Ada.jpg')},
+        {'id': 5, 'function': this._sabrina, 'image': require('./images/Sabrina.png')}
       ],
     }
   }
