@@ -1,5 +1,9 @@
 import React from 'react';
 import { StyleSheet, Text, View } from 'react-native';
+<<<<<<< HEAD
+=======
+import Grid from "./Grid";
+>>>>>>> d1cfe8d01703504c03040e34a4ceb09eb7a12f71
 import Grid1 from "./Grid1";
 import Guide from "./Guide"
 
@@ -16,11 +20,16 @@ export default class Default extends React.Component {
       <View style={styles.container}>
       {this.state.defaultStory == "Guide" ?
         <Guide
+<<<<<<< HEAD
           update={this.props.update}
         /> :
         <Grid1
           update={this.props.update}
         />}
+=======
+        update={this.props.update}/> : <Grid1
+        update={this.props.update}/>}
+>>>>>>> d1cfe8d01703504c03040e34a4ceb09eb7a12f71
       </View>
     );
   }

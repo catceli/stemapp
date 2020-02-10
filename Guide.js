@@ -22,8 +22,13 @@ export default class Guide extends React.Component {
           <Image
             style={{width: 300, height: 400}}
             source={{uri:"https://upload.wikimedia.org/wikipedia/commons/thumb/7/74/NASA_photo_of_data_scientist_Valerie_L._Thomas.gif/220px-NASA_photo_of_data_scientist_Valerie_L._Thomas.gif"}}
+<<<<<<< HEAD
           />
         </TouchableHighlight>
+=======
+            />
+          </TouchableHighlight>
+>>>>>>> d1cfe8d01703504c03040e34a4ceb09eb7a12f71
       </View>
     );
   }

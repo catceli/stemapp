@@ -1,5 +1,9 @@
 import React from 'react';
 import Default from "./Default";
+<<<<<<< HEAD
+=======
+import Grid from "./Grid";
+>>>>>>> d1cfe8d01703504c03040e34a4ceb09eb7a12f71
 import Guide from "./Guide"
 import Survey from "./Survey";
 import Current from "./Current";
@@ -33,6 +37,7 @@ export default class App extends React.Component {
       <View style={styles.container}>
       {this.state.defaultStory == null ?
         <Survey
+<<<<<<< HEAD
           update={this._setDefault}
         /> :
         <Current
@@ -40,6 +45,12 @@ export default class App extends React.Component {
           puzzle={this.state.puzzle}
           update={this._setPuzzle}
         />}
+=======
+        update={this._setDefault}/> : <Current
+        defaultStory={this.state.defaultStory}
+        puzzle={this.state.puzzle}
+        update={this._setPuzzle}/>}
+>>>>>>> d1cfe8d01703504c03040e34a4ceb09eb7a12f71
       </View>
     );
   }
