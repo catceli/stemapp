@@ -48,10 +48,10 @@ export default class Grid1 extends React.Component {
         this.state.data.map((item, index) => (
            <View key = {item.id} style = {styles.item}>
               <TouchableHighlight onPress={item.function}>
-              <Image
-                style={{width: 300, height: 400}}
-                source={item.image}
-              />
+                <Image
+                  style={{width: 300, height: 400}}
+                  source={item.image}
+                />
               </TouchableHighlight>
            </View>
       ))}
