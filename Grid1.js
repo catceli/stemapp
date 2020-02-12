@@ -8,11 +8,11 @@ export default class Grid1 extends React.Component {
     this.state = {
       defaultStory: null,
       data: [
-        {'id': 1, 'name': "Julia", 'image': require('./images/Julia.jpg')},
-        {'id': 2, 'name': "Hypatia", 'image': require('./images/Hypatia.jpg')},
-        {'id': 3, 'name': "Valerie", 'image': require('./images/Valerie.gif')},
-        {'id': 4, 'name': "Ada", 'image': require('./images/Ada.jpg')},
-        {'id': 5, 'name': "Sabrina", 'image': require('./images/Sabrina.png')}
+        {'id': 0, 'name': "Julia", 'image': require('./images/Julia.jpg')},
+        {'id': 1, 'name': "Hypatia", 'image': require('./images/Hypatia.jpg')},
+        {'id': 2, 'name': "Valerie", 'image': require('./images/Valerie.gif')},
+        {'id': 3, 'name': "Ada", 'image': require('./images/Ada.jpg')},
+        {'id': 4, 'name': "Sabrina", 'image': require('./images/Sabrina.png')}
       ],
     }
   }

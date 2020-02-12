@@ -1,76 +1,45 @@
 import React from 'react';
-import { StyleSheet, Text, View, Button } from 'react-native';
+import { StyleSheet, Text, View, Button, Alert } from 'react-native';
 
 export default class Questions extends React.Component {
   constructor(props){
     super(props);
-    this._processButton1 = this._processButton1.bind(this);
-    this._processButton2 = this._processButton2.bind(this);
-    this._processButton3 = this._processButton3.bind(this);
-    this._processButton4 = this._processButton4.bind(this);
+    this._processButton = this._processButton.bind(this);
     this.state = {
       defaultStory: null,
       text: ["Hi there! Thank you for downloading STEMinism. Would you like to take a quick to personalize your journey on STEMinism?", "Which topic do you have the most experience in?", "Which topic do you have the least experience in?", "Would you prefer to learn more about familiar topics or try new topics in this app?", "What is your favorite letter in STEM?"],
-      button1: ["Sure!", "Science", "Science", "Try new topics", "S"],
-      button2: ["No thanks.", "Technology", "Technology", "Learn more about familiar topics", "T"],
-      button3: [" ", "Engineering", "Engineering", " ", "E"],
-      button4: [" ", "Math", "Math", " ", "M"],
-      question: 0
+      buttonQs: [
+                  {'id': 0, '0': "Sure!", '1': "Science", '2': "Science", '3': "Try new topics", '4': "S"},
+                  {'id': 1, '0': "No thanks.", '1': "Technology", '2': "Technology", '3': "Learn more about familiar topics", '4': "T"},
+                  {'id': 2, '0': " ", '1': "Engineering", '2': "Engineering", '3': " ", '4': "E"},
+                  {'id': 3, '0': " ", '1': "Math", '2': "Math", '3': " ", '4': "M"}
+                ],
+      question: '0'
     }
   }
 
-  _processButton1(){
-    this.props.update(this.state.button1[this.state.question])
+  _processButton(number){
+    let question = JSON.stringify(JSON.parse(this.state.question)+1);
+    this.props.update(this.state.buttonQs[number][this.state.question])
     this.setState({
-      question: this.state.question+1
-    })
-  }
-
-  _processButton2(){
-    this.props.update(this.state.button2[this.state.question])
-    this.setState({
-      question: this.state.question+1
-    })
-  }
-
-  _processButton3(){
-    this.props.update(this.state.button3[this.state.question])
-    this.setState({
-      question: this.state.question+1
-    })
-  }
-
-  _processButton4(){
-    this.props.update(this.state.button4[this.state.question])
-    this.setState({
-      question: this.state.question+1
+      question: question
     })
   }
 
   render() {
     return (
       <View style={styles.container}>
-      <Text style={styles.text}>{this.state.text[this.state.question]}</Text>
-      <Button
-        style={styles.button}
-        title={this.state.button1[this.state.question]}
-        onPress={this._processButton1}
-      />
-      <Button
-        style={styles.button}
-        title={this.state.button2[this.state.question]}
-        onPress={this._processButton2}
-      />
-      <Button
-        style={styles.button}
-        title={this.state.button3[this.state.question]}
-        onPress={this._processButton3}
-      />
-      <Button
-        style={styles.button}
-        title={this.state.button4[this.state.question]}
-        onPress={this._processButton4}
-      />
+      <Text style={styles.text}>{this.state.text[JSON.parse(this.state.question)]}</Text>
+      {
+        this.state.buttonQs.map((item, index) => (
+           <View key = {item.id} style = {styles.item}>
+              <Button
+                style={styles.button}
+                title={item[this.state.question]}
+                onPress={() => this._processButton(item.id)}>
+              </Button>
+           </View>
+      ))}
       </View>
     );
   }
@@ -80,6 +49,13 @@ const styles = StyleSheet.create({
   button: {
     backgroundColor: '#34d1aa',
   },
+  item: {
+        flexDirection: 'row',
+        justifyContent: 'space-between',
+        alignItems: 'center',
+        padding: 30,
+        margin: 2,
+     },
   container: {
     flex: 1,
     backgroundColor: '#fff',

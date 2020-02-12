@@ -1,4 +1,5 @@
 import React from 'react';
+import _ from 'lodash';
 import { StyleSheet, Text, View, Button } from 'react-native';
 import Questions from "./Questions"
 import Default from "./Default";
@@ -21,7 +22,7 @@ export default class Survey extends React.Component {
     });
     if (answer == "No thanks."){
       this.props.update("Grid")
-    } else if (answer == "S" || answer == "T" || answer == "E" || answer == "M"){
+    } else if (_.includes('STEM', answer)){
       this.props.update("Guide")
     }
   }
