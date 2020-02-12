@@ -1,10 +1,10 @@
 import React from 'react';
 import Default from "./Default";
-import Julia from "./Puzzles/Julia";
-import Hypatia from "./Puzzles/Hypatia"
-import Valerie from "./Puzzles/Valerie"
-import Ada from "./Puzzles/Ada"
-import Sabrina from "./Puzzles/Sabrina"
+import Julia from "./puzzles/Julia";
+import Hypatia from "./puzzles/Hypatia"
+import Valerie from "./puzzles/Valerie"
+import Ada from "./puzzles/Ada"
+import Sabrina from "./puzzles/Sabrina"
 import { StyleSheet, Text, View } from 'react-native';
 
 export default class Current extends React.Component {
