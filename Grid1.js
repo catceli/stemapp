@@ -26,10 +26,11 @@ export default class Grid1 extends React.Component {
       <ScrollView>
       {
         this.state.data.map((item, index) => (
-           <View key = {item.id} style = {styles.item}>
+           <View key = {item.id} style = {styles.circle}>
               <TouchableHighlight onPress={() => this._helper(item.name)}>
                 <Image
-                  style={{width: 300, height: 400}}
+                  style={{width: null, height: null, flex: 1, borderRadius: 90,}}
+                  resizeMode='cover'
                   source={item.image}
                 />
               </TouchableHighlight>
@@ -41,13 +42,16 @@ export default class Grid1 extends React.Component {
 }
 
 const styles = StyleSheet.create({
-  item: {
-        flexDirection: 'row',
-        justifyContent: 'space-between',
-        alignItems: 'center',
-        padding: 30,
-        margin: 2,
-     },
+   circle: {
+     width: 180,
+     height: 180,
+     borderRadius: 90,
+     flexDirection: 'row',
+     justifyContent: 'space-between',
+     alignItems: 'center',
+     padding: 30,
+     margin: 2,
+   },
   container: {
     flex: 1,
     flexDirection: 'column',

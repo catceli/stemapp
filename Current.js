@@ -17,19 +17,18 @@ export default class Current extends React.Component {
   }
 
   _puzzle(props){
-    console.log('yes')
     const puzzle = props.puzzle;
     if (puzzle) {
       if (puzzle == 'Julia') {
-        return (<Julia />);
+        return (<Julia update={this.props.update}/>);
       } else if (puzzle == 'Hypatia') {
-        return (<Hypatia />);
+        return (<Hypatia update={this.props.update}/>);
       } else if (puzzle == 'Valerie') {
-        return (<Valerie />);
+        return (<Valerie update={this.props.update}/>);
       } else if (puzzle == 'Ada') {
-        return (<Ada />);
+        return (<Ada update={this.props.update}/>);
       } else if (puzzle == 'Sabrina') {
-        return (<Sabrina />);
+        return (<Sabrina update={this.props.update}/>);
       }} else {
         return (<Default
         defaultStory={this.props.defaultStory}

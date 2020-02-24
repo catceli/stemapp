@@ -4,9 +4,14 @@ import { Dimensions, StyleSheet, Text, View, AppRegistry, Button, Alert, Touchab
 export default class Sabrina extends React.Component {
   constructor(props){
     super(props);
+    this._helper= this._helper.bind(this)
     this.state = {
       puzzle: "Sabrina"
     }
+  }
+
+  _helper(name){
+    this.props.update(name)
   }
 
   render(){
@@ -27,7 +32,7 @@ export default class Sabrina extends React.Component {
         <View style = {[ styles.box, { flex: 0.6, flexDirection: 'row' } ]}>
         <TouchableHighlight
           style = {[ styles.button, { flex: 1 } ]}
-          onPress = {() => Alert.alert('hi')}>
+          onPress = {() => this._helper(null)}>
           <Text style = {[ styles.buttonText ]}>Back</Text>
         </TouchableHighlight>
           <TouchableHighlight
@@ -69,7 +74,7 @@ export default class Sabrina extends React.Component {
   },
   button: {
     alignContent: 'space-around',
-    margin: 30,
+    margin: 10,
   },
   buttonText: {
     backgroundColor: '#4169E1',
