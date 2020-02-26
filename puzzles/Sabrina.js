@@ -64,7 +64,6 @@ export default class Sabrina extends React.Component {
     justifyContent: 'center',
     marginTop: 60,
     marginBottom: 20,
-    backgroundColor: 'red'
   },
   text: {
     color: '#100812',

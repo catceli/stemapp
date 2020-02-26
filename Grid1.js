@@ -23,17 +23,18 @@ export default class Grid1 extends React.Component {
 
   render() {
     return (
-      <ScrollView>
+      <ScrollView centerContent={true} contentContainerStyle={{ alignItems: 'center' }}>
       {
         this.state.data.map((item, index) => (
-           <View key = {item.id} style = {styles.circle}>
-              <TouchableHighlight onPress={() => this._helper(item.name)}>
+           <View key = {item.id}>
+              <TouchableHighlight onPress={() => this._helper(item.name)} underlayColor='orange'>
                 <Image
-                  style={{width: null, height: null, flex: 1, borderRadius: 90,}}
+                  style={ styles.circle }
                   resizeMode='cover'
                   source={item.image}
                 />
               </TouchableHighlight>
+              <Text style = {{ alignSelf: 'center', fontSize: 24 }}>{item.name}</Text>
            </View>
       ))}
       </ScrollView>
@@ -42,19 +43,19 @@ export default class Grid1 extends React.Component {
 }
 
 const styles = StyleSheet.create({
-   circle: {
-     width: 180,
-     height: 180,
-     borderRadius: 90,
-     flexDirection: 'row',
-     justifyContent: 'space-between',
-     alignItems: 'center',
-     padding: 30,
-     margin: 2,
-   },
-  container: {
-    flex: 1,
+  circle: {
+    width: 200,
+    height: 200,
+    borderRadius: 100,
     flexDirection: 'column',
-    justifyContent: 'space-around',
+    alignItems: 'flex-end',
+    margin: 40,
+    padding: 0,
+    justifyContent: 'center',
   },
+ container: {
+   flex: 1,
+   flexDirection: 'column',
+   justifyContent: 'space-around',
+ },
 });
