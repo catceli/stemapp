@@ -17,9 +17,11 @@ export default class Default extends React.Component {
       {this.state.defaultStory == "Guide" ?
         <Guide
           update={this.props.update}
+          puzzle={this.props.puzzle}
         /> :
         <Grid1
           update={this.props.update}
+          puzzle={this.props.puzzle}
         />}
       </View>
     );

@@ -12,6 +12,7 @@ export default class App extends React.Component {
     this._setPuzzle = this._setPuzzle.bind(this);
     this.state = {
       defaultStory: null,
+      cScreen: null,
       puzzle: null
     }
   }
@@ -23,9 +24,16 @@ export default class App extends React.Component {
   }
 
   _setPuzzle(screen){
-    this.setState({
-      puzzle: screen,
-    })
+    if (!screen){
+      this.setState({
+        cScreen: screen,
+      })
+    } else if (screen) {
+      this.setState({
+        cScreen: screen,
+        puzzle: screen
+      })
+    }
   }
 
   render() {
@@ -34,11 +42,13 @@ export default class App extends React.Component {
       {this.state.defaultStory == null ?
         <Survey
           update={this._setDefault}
+          defaultStory={this.state.defaultStory}
         /> :
         <Current
           defaultStory={this.state.defaultStory}
-          puzzle={this.state.puzzle}
+          cScreen={this.state.cScreen}
           update={this._setPuzzle}
+          puzzle={this.state.puzzle}
         />}
       </View>
     );

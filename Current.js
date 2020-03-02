@@ -17,22 +17,24 @@ export default class Current extends React.Component {
   }
 
   _puzzle(props){
-    const puzzle = props.puzzle;
-    if (puzzle) {
-      if (puzzle == 'Julia') {
+    const cScreen = props.cScreen;
+    if (cScreen) {
+      if (cScreen == 'Julia') {
         return (<Julia update={this.props.update}/>);
-      } else if (puzzle == 'Hypatia') {
+      } else if (cScreen == 'Hypatia') {
         return (<Hypatia update={this.props.update}/>);
-      } else if (puzzle == 'Valerie') {
+      } else if (cScreen == 'Valerie') {
         return (<Valerie update={this.props.update}/>);
-      } else if (puzzle == 'Ada') {
+      } else if (cScreen == 'Ada') {
         return (<Ada update={this.props.update}/>);
-      } else if (puzzle == 'Sabrina') {
+      } else if (cScreen == 'Sabrina') {
         return (<Sabrina update={this.props.update}/>);
       }} else {
         return (<Default
-        defaultStory={this.props.defaultStory}
-        update={this.props.update}/>)
+          defaultStory={this.props.defaultStory}
+          update={this.props.update}
+          puzzle={this.props.puzzle}
+        />)
     }
   }
 

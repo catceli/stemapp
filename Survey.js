@@ -33,7 +33,10 @@ export default class Survey extends React.Component {
       {this.state.defaultStory == null ?
         <Questions
           update={this._update}
-        />:<Default></Default>}
+        />:<Default
+          defaultStory={this.props.defaultStory}
+          update={this.props.update}
+        />}
       </View>
     );
   }
