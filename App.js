@@ -28,7 +28,7 @@ export default class App extends React.Component {
       this.setState({
         cScreen: screen,
       })
-    } else if (screen) {
+    } else {
       this.setState({
         cScreen: screen,
         puzzle: screen
