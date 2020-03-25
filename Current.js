@@ -1,10 +1,11 @@
 import React from 'react';
-import Default from "./Default";
 import Julia from "./puzzles/Julia";
 import Hypatia from "./puzzles/Hypatia"
 import Valerie from "./puzzles/Valerie"
 import Ada from "./puzzles/Ada"
 import Sabrina from "./puzzles/Sabrina"
+import Grid1 from "./Grid1";
+import Guide from "./Guide"
 import { StyleSheet, Text, View } from 'react-native';
 
 export default class Current extends React.Component {
@@ -20,21 +21,61 @@ export default class Current extends React.Component {
     const cScreen = props.cScreen;
     if (cScreen) {
       if (cScreen == 'Julia') {
-        return (<Julia update={this.props.update}/>);
+        return (
+          <Julia
+            update={this.props.update}
+            defaultStory={this.props.defaultStory}
+          />
+        );
       } else if (cScreen == 'Hypatia') {
-        return (<Hypatia update={this.props.update}/>);
+        return (
+          <Hypatia
+            update={this.props.update}
+            defaultStory={this.props.defaultStory}
+          />
+        );
       } else if (cScreen == 'Valerie') {
-        return (<Valerie update={this.props.update}/>);
+        return (
+          <Valerie
+            update={this.props.update}
+            defaultStory={this.props.defaultStory}
+          />
+        );
       } else if (cScreen == 'Ada') {
-        return (<Ada update={this.props.update}/>);
+        return (
+          <Ada
+            update={this.props.update}
+            defaultStory={this.props.defaultStory}
+          />
+        );
       } else if (cScreen == 'Sabrina') {
-        return (<Sabrina update={this.props.update}/>);
-      }} else {
-        return (<Default
-          defaultStory={this.props.defaultStory}
-          update={this.props.update}
-          puzzle={this.props.puzzle}
-        />)
+        return (
+          <Sabrina
+            update={this.props.update}
+            defaultStory={this.props.defaultStory}
+          />
+        );
+      }
+    }
+    else {
+      if (this.props.defaultStory === "Guide"){
+        return(
+          <Guide
+            update={this.props.update}
+            puzzle={this.props.puzzle}
+            defaultStory={this.props.defaultStory}
+          />
+        )
+      }
+      else {
+        return(
+          <Grid1
+            update={this.props.update}
+            puzzle={this.props.puzzle}
+            defaultStory={this.props.defaultStory}
+          />
+        )
+      }
     }
   }
 

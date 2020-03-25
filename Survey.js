@@ -9,7 +9,6 @@ export default class Survey extends React.Component {
     this._processButton = this._processButton.bind(this);
     this._update = this._update.bind(this);
     this.state = {
-      defaultStory: null,
       text: ["Hi there! Thank you for downloading STEMinism. Would you like to take a quick to personalize your journey on STEMinism?", "Which topic do you have the most experience in?", "Which topic do you have the least experience in?", "Would you prefer to learn more about familiar topics or try new topics in this app?", "What is your favorite letter in STEM?"],
       buttonQs: [
                   {'id': 0, '0': "Sure!", '1': "Science", '2': "Science", '3': "Try new topics", '4': "S"},

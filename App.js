@@ -42,7 +42,6 @@ export default class App extends React.Component {
         {this.state.defaultStory == null ?
           <Survey
             update={this._setDefault}
-            defaultStory={this.state.defaultStory}
           /> :
           <Current
             defaultStory={this.state.defaultStory}
