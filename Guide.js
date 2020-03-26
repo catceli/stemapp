@@ -1,5 +1,12 @@
 import React from 'react';
 import { StyleSheet, Text, View, TouchableHighlight, Image } from 'react-native';
+import { TabNavigator } from 'react-navigation';
+import Current from "./Current";
+import Hypatia from "./puzzles/Hypatia";
+import Ada from "./puzzles/Ada";
+import Julia from "./puzzles/Julia";
+import Sabrina from "./puzzles/Sabrina";
+import Valerie from "./puzzles/Valerie";
 
 export default class Guide extends React.Component {
   constructor(props){

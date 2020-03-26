@@ -4,6 +4,7 @@ import Guide from "./Guide"
 import Survey from "./Survey";
 import Current from "./Current";
 import { StyleSheet, Text, View } from 'react-native';
+import { TabNavigator } from 'react-navigation';
 
 export default class App extends React.Component {
   constructor(props){

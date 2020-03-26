@@ -7,6 +7,7 @@ import Sabrina from "./puzzles/Sabrina"
 import Grid1 from "./Grid1";
 import Guide from "./Guide"
 import { StyleSheet, Text, View } from 'react-native';
+import { TabNavigator } from 'react-navigation';
 
 export default class Current extends React.Component {
   constructor(props){
