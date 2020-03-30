@@ -1,5 +1,4 @@
 import React from 'react';
-import Default from "./Default";
 import Guide from "./Guide"
 import Survey from "./Survey";
 import Current from "./Current";
