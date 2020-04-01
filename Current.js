@@ -7,33 +7,12 @@ import Sabrina from "./puzzles/Sabrina"
 import Grid1 from "./Grid1";
 import Guide from "./Guide"
 import { StyleSheet, Text, View } from 'react-native';
-import { createBottomTabNavigator } from 'react-navigation-tabs';
-//import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
+import { NavigationContainer } from '@react-navigation/native';
+import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
 
 //https://reactnavigation.org/docs/bottom-tab-navigator/
+
 const Tab = createBottomTabNavigator();
-
-var TabNavigation = createBottomTabNavigator({
-    NearbyScreen: {
-        screen: Nearby
-    },
-    FindScreen:{
-        screen: LandmarkNavigation
-    },
-    NotificationScreen:{
-        screen: Notifications
-    },
-    MyProfile:{
-        screen: MyProfile
-    }
-})
-
-//  const MainNavigator = createBottomTabNavigator(
-//   {
-//     Guide: { screen: Guide },
-//     //Puzzle: { screen: JSON.parse(this.props.puzzle) },
-//   }
-// )
 
 export default class Current extends React.Component {
   constructor(props){
@@ -63,35 +42,30 @@ export default class Current extends React.Component {
         return (
           <Julia
             update={this.props.update}
-            defaultStory={this.props.defaultStory}
           />
         );
       } else if (cScreen == 'Hypatia') {
         return (
           <Hypatia
             update={this.props.update}
-            defaultStory={this.props.defaultStory}
           />
         );
       } else if (cScreen == 'Valerie') {
         return (
           <Valerie
             update={this.props.update}
-            defaultStory={this.props.defaultStory}
           />
         );
       } else if (cScreen == 'Ada') {
         return (
           <Ada
             update={this.props.update}
-            defaultStory={this.props.defaultStory}
           />
         );
       } else if (cScreen == 'Sabrina') {
         return (
           <Sabrina
             update={this.props.update}
-            defaultStory={this.props.defaultStory}
           />
         );
       }
@@ -132,22 +106,17 @@ export default class Current extends React.Component {
   //     />)
   // }
 
-  // <View style={styles.container}>
-  //   {this._puzzle(this.props)}
-  //   <MainNavigator
-  //     screenProps={{
-  //       update: this.props.update,
-  //       puzzle: this.props.puzzle,
-  //       defaultStory: this.props.defaultStory,
-  //     }}
-  //   />
-  // </View>
-
   render() {
     return (
       <View style={styles.container}>
-        {this._puzzle(this.props)}
-        {TabNavigation}
+        <View style={{flex: 0.9}}>
+          {this._puzzle(this.props)}
+        </View>
+        <View style={{flex: 0.1}}>
+          <NavigationContainer>
+            {this._MyTabs()}
+          </NavigationContainer>
+        </View>
       </View>
     );
   }

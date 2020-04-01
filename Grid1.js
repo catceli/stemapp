@@ -1,12 +1,5 @@
 import React from 'react';
 import { StyleSheet, Text, View, Image, ScrollView, TouchableHighlight, Flatlist } from 'react-native';
-import { TabNavigator } from 'react-navigation';
-// import Current from "./Current";
-// import Hypatia from "./puzzles/Hypatia";
-// import Ada from "./puzzles/Ada";
-// import Julia from "./puzzles/Julia";
-// import Sabrina from "./puzzles/Sabrina";
-// import Valerie from "./puzzles/Valerie";
 
 export default class Grid1 extends React.Component {
   constructor(props){
@@ -28,17 +21,6 @@ export default class Grid1 extends React.Component {
     this.props.update(name)
   }
 
-  // const TabNav = TabNavigator(
-  //   {
-  //     Default: { screen: Current },
-  //     Puzzle: { screen: JSON.parse(this.props.puzzle) },
-  //   }
-  // )
-  //
-  // _tabNav(){
-  //   return(<TabNav />)
-  // }
-
   render() {
     return (
       <View>
@@ -57,8 +39,6 @@ export default class Grid1 extends React.Component {
              </View>
         ))}
         </ScrollView>
-        {//this._tabNav
-        }
       </View>
     );
   }

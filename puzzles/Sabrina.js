@@ -1,6 +1,5 @@
 import React, { Component } from 'react';
 import { Dimensions, StyleSheet, Text, View, AppRegistry, Button, Alert, TouchableHighlight, Image } from 'react-native';
-import { TabNavigator } from 'react-navigation';
 
 export default class Sabrina extends React.Component {
   constructor(props){

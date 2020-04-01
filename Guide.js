@@ -1,6 +1,5 @@
 import React from 'react';
 import { StyleSheet, Text, View, TouchableHighlight, Image } from 'react-native';
-import { TabNavigator } from 'react-navigation';
 import Current from "./Current";
 import Hypatia from "./puzzles/Hypatia";
 import Ada from "./puzzles/Ada";

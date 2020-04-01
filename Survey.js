@@ -1,7 +1,6 @@
 import React from 'react';
 import { StyleSheet, Text, View, Button, Alert } from 'react-native';
 import _ from 'lodash';
-import { TabNavigator } from 'react-navigation';
 
 export default class Survey extends React.Component {
   constructor(props){

@@ -1,6 +1,5 @@
 import React, { Component } from 'react';
 import { Dimensions, StyleSheet, Text, View, AppRegistry, Button, Alert, TouchableHighlight, Image } from 'react-native';
-import { TabNavigator } from 'react-navigation';
 
 export default class Valerie extends React.Component {
   constructor(props){
@@ -27,25 +26,25 @@ export default class Valerie extends React.Component {
           />
           </View>
           <Text style = {[ styles.text ]}>Valerie Thompson</Text>
-        </View>
-        <View style = {[ styles.box, { flex: 1.4 } ]}>
-        </View>
-        <View style = {[ styles.box, { flex: 0.6, flexDirection: 'row' } ]}>
-        <TouchableHighlight
-          style = {[ styles.button, { flex: 1 } ]}
-          onPress = {() => this._helper(null)}>
-          <Text style = {[ styles.buttonText ]}>Back</Text>
-        </TouchableHighlight>
+          </View>
+          <View style = {[ styles.box, { flex: 1.4 } ]}>
+          </View>
+          <View style = {[ styles.box, { flex: 0.6, flexDirection: 'row' } ]}>
           <TouchableHighlight
             style = {[ styles.button, { flex: 1 } ]}
-            onPress = {() => Alert.alert('hi')}>
-            <Text style = {[ styles.buttonText ]}>Next</Text>
+            onPress = {() => this._helper(null)}>
+            <Text style = {[ styles.buttonText ]}>Back</Text>
           </TouchableHighlight>
+            <TouchableHighlight
+              style = {[ styles.button, { flex: 1 } ]}
+              onPress = {() => Alert.alert('hi')}>
+              <Text style = {[ styles.buttonText ]}>Next</Text>
+            </TouchableHighlight>
+          </View>
         </View>
-      </View>
-    );
+      );
+    }
   }
-}
 
 const styles = StyleSheet.create({
   container: {
