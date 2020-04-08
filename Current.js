@@ -29,7 +29,7 @@ export default class Current extends React.Component {
   _MyTabs() {
     return (
       <Tab.Navigator>
-        <Tab.Screen name="Default" component={Guide} />
+        <Tab.Screen name="Default" component={Guide} screenProps={{{update={this.props.update}}}/>
         <Tab.Screen name="Puzzle" component={Ada} />
       </Tab.Navigator>
     );
@@ -109,11 +109,11 @@ export default class Current extends React.Component {
   render() {
     return (
       <View style={styles.container}>
-        <View style={{flex: 0.9}}>
+        <View style={{flex: 0.1, alignItems: "stretch", backgroundColor: "yellow"}}>
           {this._puzzle(this.props)}
         </View>
-        <View style={{flex: 0.1}}>
-          <NavigationContainer>
+        <View style={{flex: 0.9, backgroundColor: 'blue'}}>
+          <NavigationContainer style={{backgroundColor: 'red'}}>
             {this._MyTabs()}
           </NavigationContainer>
         </View>
@@ -126,7 +126,7 @@ const styles = StyleSheet.create({
   container: {
     flex: 1,
     backgroundColor: '#fff',
-    alignItems: 'center',
+    alignItems: 'stretch',
     justifyContent: 'center',
   },
 });

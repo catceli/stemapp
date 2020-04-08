@@ -38,7 +38,7 @@ export default class App extends React.Component {
 
   render() {
     return (
-      <View style={styles.container}>
+      <View style={[styles.container, {backgroundColor: 'orange'}]}>
         {this.state.defaultStory == null ?
           <Survey
             update={this._setDefault}
