@@ -7,12 +7,37 @@ import Sabrina from "./puzzles/Sabrina"
 import Grid1 from "./Grid1";
 import Guide from "./Guide"
 import { StyleSheet, Text, View } from 'react-native';
-import { NavigationContainer } from '@react-navigation/native';
-import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
+//import { NavigationContainer } from '@react-navigation/native';
+//import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
+import { NavigationActions } from '@react-navigation/compat';
+import { Ionicons } from '@expo/vector-icons';
 
 //https://reactnavigation.org/docs/bottom-tab-navigator/
 
-const Tab = createBottomTabNavigator();
+// const Tab = createBottomTabNavigator();
+
+const TabNavigator = createBottomTabNavigator({
+  Default: {
+    screen: Guide,
+    navigationOptions: {
+      tabBarLabel: 'Home',
+      tabBarIcon: ({ tintColor }) => (
+        <Ionicons name="ios-home" color={tintColor} size={25} />
+      )
+    }
+  },
+  Puzzle: {
+    screen: Ada,
+    navigationOptions: {
+
+    }
+  },
+}, {
+  tabBarOptions: {
+    activeTintColor: 'red',
+    inactiveTintColor: 'grey'
+  }
+});
 
 export default class Current extends React.Component {
   constructor(props){
@@ -25,15 +50,16 @@ export default class Current extends React.Component {
       default: null,
     }
   }
+//
+//   _MyTabs() {
+//     return (
+//       <Tab.Navigator>
+//         <Tab.Screen name="Default" component={Guide} screenProps={{{update={this.props.update}}}/>
+//         <Tab.Screen name="Puzzle" component={Ada} />
+//       </Tab.Navigator>
+//     );
+//   }
 
-  _MyTabs() {
-    return (
-      <Tab.Navigator>
-        <Tab.Screen name="Default" component={Guide} screenProps={{{update={this.props.update}}}/>
-        <Tab.Screen name="Puzzle" component={Ada} />
-      </Tab.Navigator>
-    );
-  }
 
   _puzzle(props){
     const cScreen = props.cScreen;
