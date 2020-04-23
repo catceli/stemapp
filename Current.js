@@ -29,7 +29,7 @@ export default class Current extends React.Component {
   _MyTabs() {
     return (
       <Tab.Navigator>
-        <Tab.Screen name="Default" component={Guide} screenProps={{{update={this.props.update}}}/>
+        <Tab.Screen name="Default" component={Guide} />
         <Tab.Screen name="Puzzle" component={Ada} />
       </Tab.Navigator>
     );
