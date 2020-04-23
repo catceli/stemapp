@@ -7,16 +7,18 @@ import Sabrina from "./puzzles/Sabrina"
 import Grid1 from "./Grid1";
 import Guide from "./Guide"
 import { StyleSheet, Text, View } from 'react-native';
-//import { NavigationContainer } from '@react-navigation/native';
-//import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
+import { NavigationContainer, createCompatNavigatorFactory } from '@react-navigation/compat';
+import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
 import { NavigationActions } from '@react-navigation/compat';
 import { Ionicons } from '@expo/vector-icons';
 
 //https://reactnavigation.org/docs/bottom-tab-navigator/
 
-// const Tab = createBottomTabNavigator();
+//maybe try createStackNavigator?
 
-const TabNavigator = createBottomTabNavigator({
+ const Tab = createBottomTabNavigator();
+
+const TabNavigator = createCompatNavigatorFactory(createBottomTabNavigator){
   Default: {
     screen: Guide,
     navigationOptions: {
