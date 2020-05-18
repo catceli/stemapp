@@ -89,10 +89,8 @@ export default class Current extends React.Component {
   render() {
     return (
       <View style={styles.container}>
-        <View style={{flex: 0.1, alignItems: "stretch", backgroundColor: "yellow"}}>
+        <View style={{flex: 1, alignItems: "stretch", backgroundColor: "yellow"}}>
           {this._puzzle(this.props)}
-        </View>
-        <View style={{flex: 0.9, backgroundColor: 'blue'}}>
         </View>
       </View>
     );

@@ -10,12 +10,12 @@ export default class Survey extends React.Component {
     this.state = {
       text: ["Hi there! Thank you for downloading STEMinism. Would you like to take a quiz to personalize your journey on STEMinism?", "Which topic do you have the most experience in?", "Which topic do you have the least experience in?", "Would you prefer to learn more about familiar topics or try new topics in this app?", "What is your favorite letter in STEM?"],
       buttonQs: [
-                  {'id': 0, '0': "Sure!", '1': "Science", '2': "Science", '3': "Try new topics", '4': "S"},
-                  {'id': 1, '0': "No thanks.", '1': "Technology", '2': "Technology", '3': "Learn more about familiar topics", '4': "T"},
-                  {'id': 2, '0': " ", '1': "Engineering", '2': "Engineering", '3': " ", '4': "E"},
-                  {'id': 3, '0': " ", '1': "Math", '2': "Math", '3': " ", '4': "M"}
+                  {'id': 0, 0: "Sure!", 1: "Science", 2: "Science", 3: "Try new topics", 4: "S"},
+                  {'id': 1, 0: "No thanks.", 1: "Technology", 2: "Technology", 3: "Learn more about familiar topics", 4: "T"},
+                  {'id': 2, 0: " ", 1: "Engineering", 2: "Engineering", 3: " ", 4: "E"},
+                  {'id': 3, 0: " ", 1: "Math", 2: "Math", 3: " ", 4: "M"}
                 ],
-      question: '0'
+      question: 0,
     }
   }
 
@@ -44,7 +44,7 @@ export default class Survey extends React.Component {
            <View key = {item.id} style = {styles.item}>
               <Button
                 style={styles.button}
-                title={JSON.stringify(item[this.state.question])}
+                title={item[this.state.question]}
                 onPress={() => this._processButton(item.id)}>
               </Button>
            </View>
