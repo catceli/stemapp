@@ -8,7 +8,7 @@ export default class Survey extends React.Component {
     this._processButton = this._processButton.bind(this);
     this._update = this._update.bind(this);
     this.state = {
-      text: ["Hi there! Thank you for downloading STEMinism. Would you like to take a quick to personalize your journey on STEMinism?", "Which topic do you have the most experience in?", "Which topic do you have the least experience in?", "Would you prefer to learn more about familiar topics or try new topics in this app?", "What is your favorite letter in STEM?"],
+      text: ["Hi there! Thank you for downloading STEMinism. Would you like to take a quiz to personalize your journey on STEMinism?", "Which topic do you have the most experience in?", "Which topic do you have the least experience in?", "Would you prefer to learn more about familiar topics or try new topics in this app?", "What is your favorite letter in STEM?"],
       buttonQs: [
                   {'id': 0, '0': "Sure!", '1': "Science", '2': "Science", '3': "Try new topics", '4': "S"},
                   {'id': 1, '0': "No thanks.", '1': "Technology", '2': "Technology", '3': "Learn more about familiar topics", '4': "T"},
@@ -28,7 +28,7 @@ export default class Survey extends React.Component {
   }
 
   _processButton(number){
-    let question = JSON.stringify(JSON.parse(this.state.question)+1);
+    let question = this.state.question+1;
     this._update(this.state.buttonQs[number][this.state.question])
     this.setState({
       question: question
@@ -38,13 +38,13 @@ export default class Survey extends React.Component {
   render() {
     return (
       <View style={styles.container}>
-      <Text style={styles.text}>{this.state.text[JSON.parse(this.state.question)]}</Text>
+      <Text style={styles.text}>{this.state.text[this.state.question]}</Text>
       {
         this.state.buttonQs.map((item, index) => (
            <View key = {item.id} style = {styles.item}>
               <Button
                 style={styles.button}
-                title={item[this.state.question]}
+                title={JSON.stringify(item[this.state.question])}
                 onPress={() => this._processButton(item.id)}>
               </Button>
            </View>

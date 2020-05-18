@@ -6,19 +6,20 @@ import Ada from "./puzzles/Ada"
 import Sabrina from "./puzzles/Sabrina"
 import Grid1 from "./Grid1";
 import Guide from "./Guide"
+import Puzzle from './Puzzle';
 import { StyleSheet, Text, View } from 'react-native';
-import { NavigationContainer } from '@react-navigation/native';
-import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
+// import { NavigationContainer } from '@react-navigation/native';
+// import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
 
 //https://reactnavigation.org/docs/bottom-tab-navigator/
 
-const Tab = createBottomTabNavigator();
+//const Tab = createBottomTabNavigator();
 
 export default class Current extends React.Component {
   constructor(props){
     super(props);
     this._puzzle = this._puzzle.bind(this);
-    this._MyTabs = this._MyTabs.bind(this);
+    //this._MyTabs = this._MyTabs.bind(this);
     //this._tabNav = this._tabNav.bind(this);
     this.state = {
       puzzle: null,
@@ -26,49 +27,24 @@ export default class Current extends React.Component {
     }
   }
 
-  _MyTabs() {
-    return (
-      <Tab.Navigator>
-        <Tab.Screen name="Default" component={Guide} />
-        <Tab.Screen name="Puzzle" component={Ada} />
-      </Tab.Navigator>
-    );
-  }
+  // _MyTabs() {
+  //   return (
+  //     <Tab.Navigator>
+  //       <Tab.Screen name="Default" component={Guide} />
+  //       <Tab.Screen name="Puzzle" component={Ada} />
+  //     </Tab.Navigator>
+  //   );
+  // }
 
   _puzzle(props){
     const cScreen = props.cScreen;
     if (cScreen) {
-      if (cScreen == 'Julia') {
         return (
-          <Julia
+          <Puzzle
             update={this.props.update}
+            name={cScreen}
           />
         );
-      } else if (cScreen == 'Hypatia') {
-        return (
-          <Hypatia
-            update={this.props.update}
-          />
-        );
-      } else if (cScreen == 'Valerie') {
-        return (
-          <Valerie
-            update={this.props.update}
-          />
-        );
-      } else if (cScreen == 'Ada') {
-        return (
-          <Ada
-            update={this.props.update}
-          />
-        );
-      } else if (cScreen == 'Sabrina') {
-        return (
-          <Sabrina
-            update={this.props.update}
-          />
-        );
-      }
     }
     else {
       if (this.props.defaultStory === "Guide"){
@@ -106,6 +82,10 @@ export default class Current extends React.Component {
   //     />)
   // }
 
+  // <NavigationContainer style={{backgroundColor: 'red'}}>
+  //   {this._MyTabs()}
+  // </NavigationContainer>
+
   render() {
     return (
       <View style={styles.container}>
@@ -113,9 +93,6 @@ export default class Current extends React.Component {
           {this._puzzle(this.props)}
         </View>
         <View style={{flex: 0.9, backgroundColor: 'blue'}}>
-          <NavigationContainer style={{backgroundColor: 'red'}}>
-            {this._MyTabs()}
-          </NavigationContainer>
         </View>
       </View>
     );

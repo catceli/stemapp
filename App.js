@@ -23,6 +23,14 @@ export default class App extends React.Component {
     })
   }
 
+//This function updates the props for all of the child components. cScreen
+//can be set to false values so that if Current.js recieves one of these values,
+//it will go to whatever the user's default screen is. These values are used instead
+//of the components themselves so that whatever component calls the function does
+//not need to have the prop of the user's default. Puzzle is always set to
+//the same screen value so that when passed to a component that may be on a different
+//screen than cScreen, the puzzle prop will always exist as a backtracking component,
+//although this hasn't been implemented yet.
   _setPuzzle(screen){
     if (!screen){
       this.setState({
