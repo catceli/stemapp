@@ -56,6 +56,7 @@ export default class App extends React.Component {
             cScreen={this.state.cScreen}
             update={this._setPuzzle}
             puzzle={this.state.puzzle}
+            setDefault={this._setDefault}
           />
         }
       </View>
